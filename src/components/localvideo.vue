@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <p>{{ $route.params.video }}</p>
-  <xgplayer :options="sample"></xgplayer>
+  <div class="bg-dark">
+  <xgplayer :options="sample" class="screen"></xgplayer>
   </div>
 </template>
 
@@ -22,3 +21,9 @@ export default {
 }
 </script>
 // http://localhost:3000/video2
+<style>
+.screen{
+  height: 900px !important;
+  width: 100%;
+}
+</style>

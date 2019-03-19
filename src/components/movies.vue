@@ -1,10 +1,10 @@
 <template>
   <div>
-    <b-row>
+    <b-row class="bg-dark">
       <b-col>
         <sidebar-menu :menu="menu" class="space"/>
       </b-col>
-      <b-col cols="9">
+      <b-col cols="9" class="right-panel">
         <b-carousel
           id="carousel1"
           style="text-shadow: 1px 1px 2px #333;"
@@ -55,9 +55,9 @@
           </b-col>
         </b-row> -->
         <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-4" style="float:left;" v-for="movie in movies">
-                   <router-link :to="{path:movie.route, params:{video: movie.url}}"> <img :src="movie.thumbnail" height="280px" width="300px"> </router-link>
+            <div class="col-12 pr-0 pl-4">
+                <div class="col-3 float-left mb-4"  v-for="movie in movies">
+                   <router-link :to="{path:movie.route, params:{video: movie.url}}"> <img :src="movie.thumbnail" height="440px" width="300px"> </router-link>
                 </div>
             </div>
         </div>
@@ -81,7 +81,17 @@ export default {
         {
           href: "/movies",
           title: "Home",
-          icon: "fa fa-home"
+          icon: "fa fa-home",
+          child: [
+            {
+              href: "/charts/hollywood",
+              title: "Home"
+            },
+            {
+              href: "/charts/animation",
+              title: "Home"
+            }
+          ]
           /*
                         disabled: true
                         badge: {
@@ -92,11 +102,67 @@ export default {
         },
         {
           title: "Movies",
-          icon: "fa fa-trend",
+          icon: "fa fa-film",
           child: [
             {
               href: "/charts/hollywood",
               title: "Hollywood"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
+            },
+            {
+              href: "/charts/animation",
+              title: "Animations"
             },
             {
               href: "/charts/animation",
@@ -114,7 +180,12 @@ export default {
 </script>
 <style>
 .space {
-  position: relative;
+  position: fixed;
+  width: 18% !important;
+}
+.right-panel{
+  min-width: 82%;
+  width: 82%;
 }
 .itemsContainer {
   float: left;
